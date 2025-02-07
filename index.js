@@ -19,9 +19,9 @@ app.use("/", slugRouter);
 })();
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  res.sendFile(path.join(__dirname, "templates", "index.html"));
 });
 
 app.listen(PORT, () => {
-  console.log(`Shortly :: Listening to https://localhost:${PORT}`);
+  console.log(`Shortly :: Listening to http://localhost:${PORT}`);
 });
