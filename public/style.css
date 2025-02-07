@@ -91,6 +91,7 @@ button:hover {
   margin-top: 2rem;
   text-align: center;
   font-weight: 600;
+  color: var(--secondary-color);
 }
 
 .features {
