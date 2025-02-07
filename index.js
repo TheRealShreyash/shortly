@@ -17,7 +17,7 @@ app.use("/", slugRouter);
 await connectDb();
 
 app.get("/", (req, res) => {
-  res.sendFile("templates/index.html", { root: __dirname });
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 app.listen(PORT, () => {
