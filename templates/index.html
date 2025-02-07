@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Shortly | Shorten Your Urls</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="#" class="navbar-brand">Shortly</a>
+      <div class="navbar-menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>Shorten Your URL</h1>
+      <form id="shortener-form">
+        <input
+          type="url"
+          id="long-url"
+          placeholder="Enter your long URL here"
+          required
+        />
+        <button class="submitbutton" type="submit">Shorten URL</button>
+      </form>
+      <div id="result"></div>
+
+      <div class="features">
+        <div class="feature">
+          <h3>Fast</h3>
+          <p>Get your shortened URL in seconds</p>
+        </div>
+        <div class="feature">
+          <h3>Secure</h3>
+          <p>Your data is always protected</p>
+        </div>
+        <div class="feature">
+          <h3>Reliable</h3>
+          <p>99.9% uptime guaranteed</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>&copy; 2025 Shortly URL Shortener. All rights reserved.</footer>
+    <!-- <script src="/script.js"></script> -->
+
+    <script>
+      const submitbutton = document.querySelector("#shortener-form");
+
+      submitbutton.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        let longurl = document.getElementById("long-url").value;
+        let a = await fetch("/api/add", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ url: longurl }), // Send URL in body
+        });
+        // let response = await a.text();
+        let data = await a.json();
+        let resultDiv = document.getElementById("result");
+        resultDiv.innerHTML = `Your shortened URL: <a href="#" style="color: var(--primary-color);">${data.newurl}</a>`;
+        resultDiv.style.backgroundColor = "#e8f4f8";
+        resultDiv.style.padding = "1rem";
+        resultDiv.style.borderRadius = "4px";
+      });
+    </script>
+  </body>
+</html>
