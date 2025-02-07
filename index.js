@@ -10,7 +10,7 @@ const PORT = 3000;
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use("/api", addRouter);
 app.use("/", slugRouter);
