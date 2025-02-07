@@ -2,7 +2,9 @@ import { Router } from "express";
 import { connectDb } from "../../lib/db.js";
 import { Url } from "../../models/url.js";
 const addRouter = Router();
-await connectDb();
+(async () => {
+  await connectDb();
+})();
 
 addRouter.post("/add", async (req, res) => {
   const { url } = req.body;

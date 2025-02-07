@@ -3,7 +3,9 @@ import { connectDb } from "../lib/db.js";
 import { Url } from "../models/url.js";
 
 const slugRouter = Router();
-await connectDb();
+(async () => {
+  await connectDb();
+})();
 
 slugRouter.get("/:code", async (req, res) => {
   try {
