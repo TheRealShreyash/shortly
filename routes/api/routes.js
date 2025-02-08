@@ -3,7 +3,8 @@ import { connectDb } from "../../lib/db.js";
 import { Url } from "../../models/url.js";
 import { User } from "../../models/user.js";
 const addUrl = Router();
-const addUser = Router()(async () => {
+const addUser = Router()
+(async () => {
   await connectDb();
 })();
 
