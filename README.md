@@ -1,1 +1,10 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7c593d53-2de6-46b2-998f-1a261ab2c041/deploy-status)](https://app.netlify.com/sites/shortlysurl/deploys)
+<h2 align="left">TechStack</h2>
+
+[![My Skills](https://skillicons.dev/icons?i=vscode,expressjs,js,mongodb)](https://skillicons.dev)
+
+###
+
+<div>
+Made with ❤ by
+<a href="https://github.com/TheRealShreyash" target="_blank">@TheRealShreyash</a>.
+</div>
